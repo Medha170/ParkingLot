@@ -2,28 +2,13 @@ package Models;
 
 import java.util.Date;
 
-public class Payment {
-    private Long id;
+public class Payment extends BaseModel{
     private Mode mode;
     private Double amount;
     private Date time;
     private PaymentStatus paymentStatus;
+    private String referenceNumber;
 
-    public Payment(Long id, Mode mode, Double amount, Date time, PaymentStatus paymentStatus) {
-        this.id = id;
-        this.mode = mode;
-        this.amount = amount;
-        this.time = time;
-        this.paymentStatus = paymentStatus;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Mode getMode() {
         return mode;
@@ -55,5 +40,13 @@ public class Payment {
 
     public void setPaymentStatus(PaymentStatus paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 }

@@ -2,36 +2,11 @@ package Models;
 
 import java.util.List;
 
-public class ParkingSpot {
-    private Long id;
-    private int number;
+public class ParkingSpot extends BaseModel{
+    private int parkingSpotNumber;
     private List<VehicleType> vehicleTypes;
-    private ParkingStatus status;
+    private ParkingSpotStatus status;
     private ParkingFloor parkingFloor;
-
-    public ParkingSpot(Long id, int number, List<VehicleType> vehicleTypes, ParkingFloor parkingFloor) {
-        this.id = id;
-        this.number = number;
-        this.vehicleTypes = vehicleTypes;
-        this.status = ParkingStatus.EMPTY;
-        this.parkingFloor = parkingFloor;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
     public List<VehicleType> getVehicleTypes() {
         return vehicleTypes;
@@ -41,11 +16,11 @@ public class ParkingSpot {
         this.vehicleTypes = vehicleTypes;
     }
 
-    public ParkingStatus getStatus() {
+    public ParkingSpotStatus getStatus() {
         return status;
     }
 
-    public void setStatus(ParkingStatus status) {
+    public void setStatus(ParkingSpotStatus status) {
         this.status = status;
     }
 
@@ -55,5 +30,13 @@ public class ParkingSpot {
 
     public void setParkingFloor(ParkingFloor parkingFloor) {
         this.parkingFloor = parkingFloor;
+    }
+
+    public int getParkingSpotNumber() {
+        return parkingSpotNumber;
+    }
+
+    public void setParkingSpotNumber(int parkingSpotNumber) {
+        this.parkingSpotNumber = parkingSpotNumber;
     }
 }

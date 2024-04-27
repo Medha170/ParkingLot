@@ -1,40 +1,33 @@
 package Models;
 
-public class Gate {
-    private Long id;
-    private int number;
-    private ParkingStatus parkingStatus;
+public class Gate extends BaseModel{
+    private int gateNumber;
+    private Operator operator;
+    private GateStatus gateStatus;
     private GateType gateType;
 
-    public Gate(Long id, int number) {
-        this.id = id;
-        this.number = number;
-        this.parkingStatus = ParkingStatus.EMPTY;
-        this.gateType = GateType.ENTRY;
+    public Operator getOperator() {
+        return operator;
     }
 
-    public Long getId() {
-        return id;
+    public void setOperator(Operator operator) {
+        this.operator = operator;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public GateStatus getGateStatus() {
+        return gateStatus;
     }
 
-    public int getNumber() {
-        return number;
+    public void setGateStatus(GateStatus gateStatus) {
+        this.gateStatus = gateStatus;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public int getGateNumber() {
+        return gateNumber;
     }
 
-    public ParkingStatus getParkingStatus() {
-        return parkingStatus;
-    }
-
-    public void setParkingStatus(ParkingStatus parkingStatus) {
-        this.parkingStatus = parkingStatus;
+    public void setGateNumber(int gateNumber) {
+        this.gateNumber = gateNumber;
     }
 
     public GateType getGateType() {

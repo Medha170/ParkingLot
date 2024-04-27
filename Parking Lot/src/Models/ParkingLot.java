@@ -2,25 +2,26 @@ package Models;
 
 import java.util.List;
 
-public class ParkingLot {
-    private Long id;
+public class ParkingLot extends BaseModel{
     private List<ParkingFloor> floors;
     private List<Gate> gates;
-    private ParkingStatus status;
+    private List<VehicleType> vehicleTypes;
+    private ParkingLotStatus parkingLotStatus;
 
-    public ParkingLot(Long id, List<ParkingFloor> floors, List<Gate> gates) {
-        this.id = id;
-        this.floors = floors;
-        this.gates = gates;
-        this.status = ParkingStatus.EMPTY;
+    public List<VehicleType> getVehicleTypes() {
+        return vehicleTypes;
     }
 
-    public Long getId() {
-        return id;
+    public void setVehicleTypes(List<VehicleType> vehicleTypes) {
+        this.vehicleTypes = vehicleTypes;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public ParkingLotStatus getParkingLotStatus() {
+        return parkingLotStatus;
+    }
+
+    public void setParkingLotStatus(ParkingLotStatus parkingLotStatus) {
+        this.parkingLotStatus = parkingLotStatus;
     }
 
     public List<ParkingFloor> getFloors() {
@@ -37,13 +38,5 @@ public class ParkingLot {
 
     public void setGates(List<Gate> gates) {
         this.gates = gates;
-    }
-
-    public ParkingStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ParkingStatus status) {
-        this.status = status;
     }
 }

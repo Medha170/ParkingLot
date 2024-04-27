@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Bill {
-    private Long id;
+public class Bill extends BaseModel{
     private Ticket ticket;
     private Date exitTime;
     private Double amount;
     private List<Payment> payment;
-    private PaymentStatus billStatus;
+    private BillStatus billStatus;
+    private Operator operator;
 
-    public Bill(Long id, Ticket ticket, Double amount, List<Payment> payment) {
-        this.id = id;
-        this.ticket = ticket;
-        this.amount = amount;
-        this.payment = new ArrayList<>();
-        this.billStatus = PaymentStatus.PENDING;
+    public BillStatus getBillStatus() {
+        return billStatus;
     }
 
-    public Long getId() {
-        return id;
+    public void setBillStatus(BillStatus billStatus) {
+        this.billStatus = billStatus;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
     }
 
     public Ticket getTicket() {
@@ -60,11 +60,11 @@ public class Bill {
         this.payment = payment;
     }
 
-    public PaymentStatus getBillStatus() {
-        return billStatus;
-    }
-
-    public void setBillStatus(PaymentStatus billStatus) {
-        this.billStatus = billStatus;
-    }
+//    public PaymentStatus getBillStatus() {
+//        return billStatus;
+//    }
+//
+//    public void setBillStatus(PaymentStatus billStatus) {
+//        this.billStatus = billStatus;
+//    }
 }

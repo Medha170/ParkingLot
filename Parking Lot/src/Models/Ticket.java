@@ -2,38 +2,14 @@ package Models;
 
 import java.util.Date;
 
-public class Ticket {
-    private Long id;
-    private int number;
+public class Ticket extends BaseModel{
+    private String ticketNumber;
     private Date entryTime;
     private Vehicle vehicle;
     private ParkingSpot parkingSpot;
-    private Gate gate;
+    private Gate generatedAt;
+    private Operator generatedBy;
 
-    public Ticket(Long id, int number, Date entryTime, Vehicle vehicle, ParkingSpot parkingSpot, Gate gate) {
-        this.id = id;
-        this.number = number;
-        this.entryTime = entryTime;
-        this.vehicle = vehicle;
-        this.parkingSpot = parkingSpot;
-        this.gate = gate;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
     public Date getEntryTime() {
         return entryTime;
@@ -59,11 +35,27 @@ public class Ticket {
         this.parkingSpot = parkingSpot;
     }
 
-    public Gate getGate() {
-        return gate;
+    public String getTicketNumber() {
+        return ticketNumber;
     }
 
-    public void setGate(Gate gate) {
-        this.gate = gate;
+    public void setTicketNumber(String ticketNumber) {
+        this.ticketNumber = ticketNumber;
+    }
+
+    public Gate getGeneratedAt() {
+        return generatedAt;
+    }
+
+    public void setGeneratedAt(Gate generatedAt) {
+        this.generatedAt = generatedAt;
+    }
+
+    public Operator getGeneratedBy() {
+        return generatedBy;
+    }
+
+    public void setGeneratedBy(Operator generatedBy) {
+        this.generatedBy = generatedBy;
     }
 }

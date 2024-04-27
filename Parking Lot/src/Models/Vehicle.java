@@ -1,33 +1,10 @@
 package Models;
 
-public class Vehicle {
-    private Long id;
-    private int number;
+public class Vehicle extends BaseModel{
+    private String number;
+    private String ownerName;
+
     private VehicleType vehicleType;
-    private  User user;
-
-    public Vehicle(Long id, int number, VehicleType vehicleType, User user) {
-        this.id = id;
-        this.number = number;
-        this.vehicleType = vehicleType;
-        this.user = user;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
     public VehicleType getVehicleType() {
         return vehicleType;
@@ -37,11 +14,19 @@ public class Vehicle {
         this.vehicleType = vehicleType;
     }
 
-    public User getUser() {
-        return user;
+    public String getNumber() {
+        return number;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 }
